@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1 class="text-primary" style="background-color:white">User Registration Form</h1>
+    <div class="col-md-6 offset-md-3">
+
+    <form method="POST" action="{% url 'register_user' %}">
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <p>Your form has Errors..</p>
+
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Register" class="btn btn-secondary">
+    </form>
+    </div>
+
+
+
+
+
+{% endblock %}
